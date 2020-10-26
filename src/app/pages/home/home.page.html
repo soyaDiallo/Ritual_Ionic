@@ -1,0 +1,112 @@
+<ion-app>
+  <ion-menu contentId="main-content" type="push">
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-title></ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-header class="ion-no-border">
+        <ion-toolbar>
+          <ion-avatar class="ion-margin-top ion-margin-start">
+            <img src="../../../assets/logo_cat_1.png" />
+          </ion-avatar>
+          <ion-title color="tertiary" class="ion-margin-top">{{displayName}}</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-list class="ion-margin-top ion-margin-bottom">
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+          <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false">
+            <ion-icon color="primary" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon"></ion-icon>
+            <ion-label color="secondary">{{ p.title }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-header class="ion-no-border" #header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+
+      <ion-label>
+        <h3>Bienvenue sur Ritual</h3>
+        <p>
+          Sous-title <span>Position</span>
+        </p>
+      </ion-label>
+
+      <ion-buttons slot="end">
+        <ion-button [routerLink]="['/location']" routerLinkActive="router-link-active">
+          <ion-icon style="font-size: 14pt;" slot="icon-only" name="location"></ion-icon>
+        </ion-button>
+
+        <ion-button [routerLink]="['/search']" routerLinkActive="router-link-active">
+          <ion-icon style="font-size: 14pt;" slot="icon-only" name="search"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [scrollEvents]="true" (ionScroll)="logScrolling($event)" (ionScrollStart)="scrollStart(header)"
+    class="ion-no-margin ion-no-padding" id="main-content">
+    <ion-refresher color="primary" slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="crescent">
+      </ion-refresher-content>
+    </ion-refresher>
+
+    <ion-item lines="none">
+      <ion-label color="secondary">Tendance</ion-label>
+    </ion-item>
+    <ion-slides mode="ios" [options]="slideOptsTendance">
+      <ion-slide *ngFor="let item of listOfRestaurant">
+        <ion-card button mode="ios" (click)="slideToRestaurant()" [routerLink]="['/restaurant']"
+          routerLinkActive="router-link-active">
+          <ion-card-content>
+            <ion-img [src]="item.img"></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+
+    <ion-item lines="none">
+      <ion-label color="secondary">Categorie</ion-label>
+    </ion-item>
+    <ion-slides mode="ios" [options]="slideOptsCategorie">
+      <ion-slide *ngFor="let item of listOfCategory">
+        <ion-card button mode="ios" (click)="slideToRestaurant()" [routerLink]="['/restaurant']"
+          routerLinkActive="router-link-active">
+          <ion-card-content>
+            <ion-img [src]="item.img"></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+
+    <ion-item lines="none">
+      <ion-label color="secondary">Restaurants</ion-label>
+      <ion-icon color="secondary" slot="end" name="information-circle-outline"></ion-icon>
+    </ion-item>
+    <ion-list>
+      <ion-card *ngFor="let item of listOfRestaurant" mode="ios" button (click)="slideToRestaurant()"
+        [routerLink]="['/restaurant']" routerLinkActive="router-link-active">
+        <ion-card-content>
+          <ion-img [src]="item.img"></ion-img>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+  </ion-content>
+
+  <ion-footer class="ion-no-border">
+    <ion-toolbar color="primary" (click)="slideToPannier()" [routerLink]="['/pannier']"
+      routerLinkActive="router-link-active">
+      <ion-label slot="start">1 produit</ion-label>
+      <ion-title class="ion-text-center">Voir le panier</ion-title>
+      <ion-label slot="end">80 DHS</ion-label>
+    </ion-toolbar>
+  </ion-footer>
+</ion-app>

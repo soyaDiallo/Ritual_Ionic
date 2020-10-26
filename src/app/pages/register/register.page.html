@@ -1,0 +1,81 @@
+<ion-app>
+  <ion-header class="ion-no-border" color="primary" mode="ios">
+    <ion-toolbar class="ion-no-border" color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button text="" icon="arrow-back" defaultHref="portal"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content color="primary">
+    <form [formGroup]="dataRegister" (ngSubmit)="signUp()">
+      <ion-card>
+        <ion-card-header class="ion-padding-bottom">
+          <ion-card-subtitle class="ion-text-center" style="font-size: 14pt; font-weight: 600;">
+            S'inscrire
+          </ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-list>
+            <ion-label style="margin-top: 14px;">COMMENT VEUX-TU QU'ON T'APPELLE ?</ion-label>
+            <ion-item class="ion-no-padding ion-no-margin">
+              <ion-input color="primary" type="text" placeholder="Nom d'utilisateur" formControlName="username">
+              </ion-input>
+              <ion-icon *ngIf="dataRegister.controls.username.valid" color="success" slot="end" name="checkmark-circle">
+              </ion-icon>
+              <ion-icon *ngIf="dataRegister.controls.username.hasError()"
+                (click)="dataRegister.controls.username.reset()" color="danger" slot="end" name="close-circle">
+              </ion-icon>
+            </ion-item>
+
+            <ion-label>INFORMATION DU COMPTE</ion-label>
+            <ion-item class="ion-no-padding ion-no-margin">
+              <ion-input color="primary" type="email" placeholder="E-mail" formControlName="email"></ion-input>
+              <ion-icon *ngIf="dataRegister.controls.email.valid" color="success" slot="end" name="checkmark-circle">
+              </ion-icon>
+              <ion-icon *ngIf="dataRegister.controls.email.hasError()" (click)="dataRegister.controls.email.reset()"
+                color="danger" slot="end" name="close-circle">
+              </ion-icon>
+            </ion-item>
+
+            <ion-item class="ion-no-padding ion-no-margin" style="margin-bottom: 4px;">
+              <ion-input color="primary" *ngIf="!showPassword" type="password" placeholder="Mot de passe"
+                formControlName="password">
+              </ion-input>
+              <ion-icon (click)="showPassword = true" *ngIf="!showPassword" color="secondary" slot="end" name="eye">
+              </ion-icon>
+
+              <ion-input color="primary" *ngIf="showPassword" type="text" placeholder="Mot de passe"
+                formControlName="password">
+              </ion-input>
+              <ion-icon (click)="showPassword = false" *ngIf="showPassword" color="secondary" slot="end" name="eye-off">
+              </ion-icon>
+            </ion-item>
+            <p style="margin-bottom: 14px;">Format: Azerty123#</p>
+          </ion-list>
+
+          <p>En t'inscrivant, tu acceptes les <a>Conditions d'Utilisation</a> et la <a>Politique de Confidentialité</a>
+            de
+            Ritual.</p>
+        </ion-card-content>
+      </ion-card>
+
+      <button [disabled]="!dataRegister.valid" type="submit"
+        style="position: absolute; left: -9999px; width: 1px; height: 1px;"></button>
+    </form>
+  </ion-content>
+
+  <ion-footer class="ion-no-border ion-no-margin ion-no-padding">
+    <ion-card class="ion-no-margin">
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="signUp()" color="primary" expand="block" fill="solid" mode="ios"
+            [disabled]="!dataRegister.valid">
+            Créer un compte
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-footer>
+</ion-app>

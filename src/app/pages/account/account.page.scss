@@ -1,0 +1,54 @@
+ion-app > ion-header > ion-toolbar > ion-label > h3 {
+    font-size: 12pt;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+}
+ion-app > ion-header > ion-toolbar > ion-label > p {
+    font-size: 10pt;
+    color: #efefef;
+    letter-spacing: 0.6px;
+}
+
+ion-app > ion-content > ion-header > ion-toolbar > ion-item > ion-avatar {
+    width: 80px;
+    height: 80px;
+}
+ion-app > ion-content > ion-header > ion-toolbar > ion-item > ion-label > h3 {
+    font-size: 12pt;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+ion-app > ion-content > ion-header > ion-toolbar > ion-item > ion-label > p {
+    font-size: 10pt;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+ion-app > ion-content > ion-header > ion-toolbar,
+ion-app > ion-content > ion-header > ion-toolbar > ion-item {
+    background-color: #f8f9f9;
+    --background: #f8f9f9;
+}
+
+ion-app > ion-content > ion-list > ion-item > ion-label {
+    font-size: 12pt;
+    font-weight: 500;
+}
+ion-app > ion-content > ion-list > ion-list-header > ion-label {
+    font-size: 10pt;
+    font-weight: 500;
+}
+
+ion-app > ion-content > ion-list > form > ion-item > ion-label {
+    font-size: 12pt;
+    font-weight: 500;
+    color: var(--ion-color-primary);
+}
+ion-app > ion-content > ion-list > form > ion-item > ion-input {
+    color: var(--ion-color-primary);
+}
+ion-app > ion-content > ion-list > form > ion-item > ion-button {
+    font-size: 12pt;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}

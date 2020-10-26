@@ -1,0 +1,70 @@
+ion-header > ion-toolbar {
+    padding-left: 10px;
+}
+ion-header > ion-toolbar > ion-buttons > ion-back-button {
+    font-size: 10pt;
+}
+
+ion-content > form {
+    height: 150%;
+}
+ion-content > form > ion-card {
+    height: 150%;
+}
+ion-content > form > ion-card > ion-card-content > ion-list > ion-item > ion-buttons > ion-button {
+    width: 45px;
+    height: 45px;
+}
+ion-content > form > ion-card > ion-card-content > ion-list > ion-item {
+    margin-bottom: 28px;
+}
+ion-content > form > ion-card > ion-card-content > ion-list > ion-label {
+    font-size: 12px;
+    font-weight: 800;
+}
+ion-content > form > ion-card > ion-card-content > p {
+    font-size: 9pt;
+    font-weight: 500;
+}
+ion-content > form > ion-card > ion-card-content > ion-list > p {
+    font-size: 9.5pt;
+    font-weight: 500;
+}
+ion-content > form > ion-card > ion-card-content > p > a {
+    text-decoration: none;
+}
+ion-card-title {
+    font-size: 14pt;
+    font-weight: 600;
+    letter-spacing: 0.5;
+}
+ion-card-subtitle {
+    font-weight: 400;
+    letter-spacing: 0.5;
+}
+ion-content > form > ion-card {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    box-shadow: none;
+}
+ion-content > form > ion-card > ion-card-content > a {
+    text-decoration: none;
+    font-weight: 400;
+}
+
+ion-footer {
+    background-color: var(--ion-color-primary);
+}
+ion-footer > ion-card {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    box-shadow: none;
+}
+ion-footer > ion-card > ion-row > ion-col > ion-button {
+    font-size: 12pt;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}

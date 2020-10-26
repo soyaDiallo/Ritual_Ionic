@@ -1,0 +1,92 @@
+<ion-app>
+  <ion-header class="ion-no-border">
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button text="" icon="arrow-back" defaultHref="home"></ion-back-button>
+      </ion-buttons>
+
+      <ion-label>
+        <h3>Paramètres utilisateur</h3>
+        <p>
+          Paramètres & Compte
+        </p>
+      </ion-label>
+
+      <ion-buttons slot="end">
+        <ion-button (click)="signOut()">
+          <ion-icon slot="icon-only" name="exit-outline"></ion-icon>
+        </ion-button>
+        <ion-button>
+          <ion-icon style="font-size: 14pt;" slot="icon-only" name="ellipsis-vertical"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-refresher color="primary" slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="crescent">
+      </ion-refresher-content>
+    </ion-refresher>
+
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-item lines="none">
+          <ion-avatar slot="start">
+            <img src="../../../assets/logo_cat_1.png" />
+          </ion-avatar>
+          <ion-label>
+            <h3>{{displayName}}</h3>
+            <p>{{email}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-list>
+      <ion-list-header>
+        <ion-label>PARAMETRES UTILISATEUR</ion-label>
+      </ion-list-header>
+      <ion-item lines="none" button [routerLink]="['/account']" routerLinkActive="router-link-active">
+        <ion-icon color="secondary" slot="start" name="person"></ion-icon>
+        <ion-label color="secondary">Mon compte</ion-label>
+      </ion-item>
+
+      <ion-list-header>
+        <ion-label>PARAMETRES DE L'APPLICATION</ion-label>
+      </ion-list-header>
+      <ion-item lines="none" button>
+        <ion-icon color="secondary" slot="start" name="notifications"></ion-icon>
+        <ion-label color="secondary">Notifications</ion-label>
+      </ion-item>
+
+      <ion-item lines="none" button>
+        <ion-icon color="secondary" slot="start" name="color-fill"></ion-icon>
+        <ion-label color="secondary">Apparence</ion-label>
+      </ion-item>
+
+      <ion-item lines="none" button>
+        <ion-icon color="secondary" slot="start" name="language"></ion-icon>
+        <ion-label color="secondary">Langage</ion-label>
+      </ion-item>
+
+      <ion-list-header>
+        <ion-label>INFORMATIONS SUR L'APPLICATION</ion-label>
+      </ion-list-header>
+      <ion-item lines="none" button>
+        <ion-icon color="secondary" slot="start" name="help-circle"></ion-icon>
+        <ion-label color="secondary">Assistance</ion-label>
+      </ion-item>
+
+      <ion-item lines="none" button>
+        <ion-icon color="secondary" slot="start" name="share"></ion-icon>
+        <ion-label color="secondary">Recommander Ritual</ion-label>
+      </ion-item>
+
+      <ion-item lines="none" button>
+        <ion-icon color="secondary" slot="start" name="alert-circle"></ion-icon>
+        <ion-label color="secondary">Remerciements</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-app>

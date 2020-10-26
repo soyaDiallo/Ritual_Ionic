@@ -1,0 +1,111 @@
+<ion-app>
+  <ion-header class="ion-no-border" #header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button text="" icon="arrow-back" defaultHref="home"></ion-back-button>
+      </ion-buttons>
+
+      <ion-label>
+        <h3>Mes récompences</h3>
+        <p>
+          Lorem ipsum dolor sit amet
+        </p>
+      </ion-label>
+
+      <ion-buttons slot="end">
+        <ion-button [routerLink]="['/awards-about']" routerLinkActive="router-link-active">
+          <ion-icon slot="icon-only" name="information-circle"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-segment class="ion-padding-start ion-padding-end" #awardSegment (ionChange)="segmentChanged($event)"
+    value="solde">
+    <ion-segment-button value="solde">
+      <ion-label>Solde</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="gagne">
+      <ion-label>Point Gagné</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="utilise">
+      <ion-label>Point Utilisé</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-content [scrollEvents]="true" (ionScroll)="logScrolling($event)" (ionScrollStart)="scrollStart(header)">
+    <ion-refresher color="primary" slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="crescent">
+      </ion-refresher-content>
+    </ion-refresher>
+
+    <ion-slides mode="ios" #awardSlider (ionSlideDidChange)="slidesChanged(slide)" [options]="slideOpts">
+      <ion-slide>
+        <ion-list>
+          <ion-card button mode="ios">
+            <ion-card-content>
+              <ion-img src="../../../assets/img01.png"></ion-img>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-item lines="none" class="ion-margin-top">
+            <ion-label>DERNIERES CONMMANDES</ion-label>
+            <ion-button fill="clean">
+              Plus
+            </ion-button>
+          </ion-item>
+
+          <ion-item lines="none" button *ngFor="let item of listOfLastOrders">
+            <ion-thumbnail slot="start">
+              <img [src]="item.img" />
+            </ion-thumbnail>
+            <ion-label>
+              <h3>{{item.title}}</h3>
+              <p>{{item.desc}}</p>
+            </ion-label>
+            <ion-note slot="end">
+              <p class="ion-text-center">{{item.date}}</p>
+              <h6 class="ion-text-center">{{item.price}}</h6>
+            </ion-note>
+          </ion-item>
+        </ion-list>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-list>
+          <ion-item lines="none" button *ngFor="let item of listOfPointsWin">
+            <ion-thumbnail slot="start">
+              <img [src]="item.img" />
+            </ion-thumbnail>
+            <ion-label>
+              <h3>{{item.title}}</h3>
+              <p>{{item.desc}}</p>
+            </ion-label>
+            <ion-note slot="end">
+              <p class="ion-text-center">{{item.date}}</p>
+              <h6 class="ion-text-center">{{item.price}}</h6>
+            </ion-note>
+          </ion-item>
+        </ion-list>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-list>
+          <ion-item lines="none" button *ngFor="let item of listOfPointsLose">
+            <ion-thumbnail slot="start">
+              <img [src]="item.img" />
+            </ion-thumbnail>
+            <ion-label>
+              <h3>{{item.title}}</h3>
+              <p>{{item.desc}}</p>
+            </ion-label>
+            <ion-note slot="end">
+              <p class="ion-text-center">{{item.date}}</p>
+              <h6 class="ion-text-center">{{item.price}}</h6>
+            </ion-note>
+          </ion-item>
+        </ion-list>
+      </ion-slide>
+    </ion-slides>
+  </ion-content>
+</ion-app>

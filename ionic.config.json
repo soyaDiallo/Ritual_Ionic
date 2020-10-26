@@ -1,0 +1,7 @@
+{
+  "name": "Ritual-App",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,65 @@
+ion-app > ion-menu {
+    box-shadow: none;
+}
+ion-app > ion-menu > ion-content > ion-header > ion-toolbar > ion-avatar {
+    width: 70px;
+    height: 70px;
+}
+ion-app > ion-menu > ion-content > ion-list > ion-menu-toggle > ion-item > ion-label {
+    font-weight: 500;
+    font-size: 12pt;
+    letter-spacing: 0.5px;
+}
+
+ion-app > ion-header > ion-toolbar > ion-label > h3 {
+    font-size: 12pt;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+}
+ion-app > ion-header > ion-toolbar > ion-label > p {
+    font-size: 10pt;
+    color: #dedede;
+    letter-spacing: 0.6px;
+}
+ion-app > ion-header > ion-toolbar > ion-label > p > span {
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+}
+
+ion-app > ion-content > ion-item > ion-label {
+    font-weight: 500;
+}
+
+ion-card-content {
+    margin: 0px;
+    padding: 0px;
+}
+ion-card {
+    margin-top: 0px;
+    padding: 0px;
+    box-shadow: none;
+}
+
+ion-app > ion-footer {
+    margin-bottom: 5px;
+}
+ion-app > ion-footer,
+ion-app > ion-footer > ion-toolbar {
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #fff;
+}
+ion-app > ion-footer > ion-toolbar {
+    border-radius: 5px;
+}
+ion-app > ion-footer > ion-toolbar > ion-label {
+    font-size: 10pt;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+ion-app > ion-footer > ion-toolbar > ion-title {
+    font-size: 12pt;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}

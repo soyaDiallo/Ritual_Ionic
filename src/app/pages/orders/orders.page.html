@@ -1,0 +1,119 @@
+<ion-app>
+  <ion-header class="ion-no-border" #header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button text="" icon="arrow-back" defaultHref="home"></ion-back-button>
+      </ion-buttons>
+
+      <ion-label>
+        <h3>Mes commandes</h3>
+        <p>
+          Lorem ipsum dolor sit amet
+        </p>
+      </ion-label>
+
+      <ion-buttons slot="end">
+        <ion-button>
+          <ion-icon style="font-size: 14pt;" slot="icon-only" name="ellipsis-vertical"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-segment scrollable="true" class="ion-padding-start ion-padding-end" #awardSegment
+    (ionChange)="segmentChanged($event)" value="encours">
+    <ion-segment-button value="encours">
+      <ion-label>Encours</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="programmees">
+      <ion-label>Programmées</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="effectuees">
+      <ion-label>Effectuées</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="annulees">
+      <ion-label>Annulées</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-content [scrollEvents]="true" (ionScroll)="logScrolling($event)" (ionScrollStart)="scrollStart(header)">
+    <ion-refresher color="primary" slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="crescent">
+      </ion-refresher-content>
+    </ion-refresher>
+
+    <ion-slides mode="ios" #awardSlider (ionSlideDidChange)="slidesChanged(slide)">
+      <ion-slide>
+        <ion-list>
+          <ion-item lines="none" button *ngFor="let item of listOfCurrentOrders">
+            <ion-thumbnail slot="start">
+              <img [src]="item.img" />
+            </ion-thumbnail>
+            <ion-label>
+              <h3>{{item.title}}</h3>
+              <p>{{item.desc}}</p>
+            </ion-label>
+            <ion-note slot="end">
+              <p class="ion-text-center">{{item.date}}</p>
+              <h6 class="ion-text-center">{{item.price}}</h6>
+            </ion-note>
+          </ion-item>
+        </ion-list>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-list>
+          <ion-item lines="none" button *ngFor="let item of listOfCurrentOrders">
+            <ion-thumbnail slot="start">
+              <img [src]="item.img" />
+            </ion-thumbnail>
+            <ion-label>
+              <h3>{{item.title}}</h3>
+              <p>{{item.desc}}</p>
+            </ion-label>
+            <ion-note slot="end">
+              <p class="ion-text-center">{{item.date}}</p>
+              <h6 class="ion-text-center">{{item.price}}</h6>
+            </ion-note>
+          </ion-item>
+        </ion-list>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-list>
+          <ion-item lines="none" button *ngFor="let item of listOfCurrentOrders">
+            <ion-thumbnail slot="start">
+              <img [src]="item.img" />
+            </ion-thumbnail>
+            <ion-label>
+              <h3>{{item.title}}</h3>
+              <p>{{item.desc}}</p>
+            </ion-label>
+            <ion-note slot="end">
+              <p class="ion-text-center">{{item.date}}</p>
+              <h6 class="ion-text-center">{{item.price}}</h6>
+            </ion-note>
+          </ion-item>
+        </ion-list>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-list>
+          <ion-item lines="none" button *ngFor="let item of listOfCurrentOrders">
+            <ion-thumbnail slot="start">
+              <img [src]="item.img" />
+            </ion-thumbnail>
+            <ion-label>
+              <h3>{{item.title}}</h3>
+              <p>{{item.desc}}</p>
+            </ion-label>
+            <ion-note slot="end">
+              <p class="ion-text-center">{{item.date}}</p>
+              <h6 class="ion-text-center">{{item.price}}s</h6>
+            </ion-note>
+          </ion-item>
+        </ion-list>
+      </ion-slide>
+    </ion-slides>
+  </ion-content>
+</ion-app>

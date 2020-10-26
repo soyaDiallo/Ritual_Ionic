@@ -1,0 +1,77 @@
+<ion-app>
+  <ion-header class="ion-no-border">
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button text="" icon="arrow-back" defaultHref="home"></ion-back-button>
+      </ion-buttons>
+
+      <ion-label>
+        <h3>Mon compte</h3>
+        <p>
+          Paramètres utilisateur
+        </p>
+      </ion-label>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-item lines="none" button>
+          <ion-avatar slot="start">
+            <img src="../../../assets/logo_cat_1.png" />
+          </ion-avatar>
+
+          <ion-label>
+            <h3>{{displayName}}</h3>
+            <p>{{email}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-list class="ion-padding-end">
+      <ion-list-header>
+        <ion-label>MODIFIER LE COMPTE</ion-label>
+        <ion-button color="primary" (click)="showForm = !showForm">
+          <ion-icon style="font-size: 12pt;" slot="icon-only" name="brush"></ion-icon>
+        </ion-button>
+      </ion-list-header>
+
+      <form class="ion-margin-start ion-margin-bottom" [formGroup]="dataAccount" (ngSubmit)="updateProfile()">
+        <ion-item>
+          <ion-label position="floating">Nom d'utilisateur <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input [disabled]="!showForm" type="text" formControlName="username"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">E-mail <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input [disabled]="!showForm" type="email" formControlName="email"></ion-input>
+        </ion-item>
+
+        <ion-button class="ion-margin-top" [disabled]="!showForm" type="submit" expand="block" fill="solid" mode="ios"
+          color="primary">
+          Modifier
+        </ion-button>
+      </form>
+
+      <ion-list-header>
+        <ion-label>GESTION DU COMPTE</ion-label>
+      </ion-list-header>
+
+      <ion-item lines="none" button>
+        <ion-label color="secondary">Changer le mot de passe</ion-label>
+      </ion-item>
+
+      <ion-item lines="none" button>
+        <ion-label color="secondary">Désactiver le compte</ion-label>
+      </ion-item>
+
+      <ion-item lines="none" button>
+        <ion-label color="danger">Supprimer le compte</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-app>

@@ -1,0 +1,53 @@
+<ion-app>
+  <ion-header class="ion-no-border">
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button text="" icon="arrow-back" defaultHref="home"></ion-back-button>
+      </ion-buttons>
+      <ion-item color="primary">
+        <ion-input autofocus="true" type="text" placeholder="@Rechercher"></ion-input>
+      </ion-item>
+      <ion-buttons slot="end">
+        <ion-button>
+          <ion-icon slot="icon-only" name="filter"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding-top">
+    <ion-slides [options]="slideOptsCategory">
+      <ion-slide>
+        <ion-card button mode="ios">
+          <ion-card-content>
+            <ion-img src="../../../assets/logo_cat_1.png"></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card button mode="ios">
+          <ion-card-content>
+            <ion-img src="../../../assets/logo_cat_1.png"></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+
+    <ion-slides [options]="slideOptsCategory">
+      <ion-slide>
+        <ion-card button mode="ios">
+          <ion-card-content>
+            <ion-img src="../../../assets/logo_cat_1.png"></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card button mode="ios">
+          <ion-card-content>
+            <ion-img src="../../../assets/logo_cat_1.png"></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </ion-content>
+</ion-app>

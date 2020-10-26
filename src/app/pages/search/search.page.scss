@@ -1,0 +1,12 @@
+ion-app > ion-header > ion-toolbar > ion-item {
+    --highlight-color-focused: #ffffff;
+}
+ion-card-content {
+    margin: 0px;
+    padding: 0px;
+}
+ion-card {
+    margin: 8px;
+    padding: 0px;
+    box-shadow: none;
+}

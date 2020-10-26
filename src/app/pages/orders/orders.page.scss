@@ -1,0 +1,51 @@
+ion-app > ion-header > ion-toolbar > ion-label > h3 {
+    font-size: 12pt;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+}
+ion-app > ion-header > ion-toolbar > ion-label > p {
+    font-size: 10pt;
+    color: #efefef;
+    letter-spacing: 0.6px;
+}
+
+ion-app > ion-segment {
+    --background: var(--ion-color-primary);
+}
+ion-app > ion-segment > ion-segment-button {
+    --background: var(--ion-color-primary);
+    --border-color: #fff;
+    --color: #dedede;
+    --color-checked: #fff;
+}
+ion-app > ion-segment > ion-segment-button > ion-label {
+    font-size: 10pt;
+}
+
+ion-slide > ion-list {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+ion-slide > ion-list > ion-item > ion-thumbnail {
+    --border-radius: 15px;
+}
+ion-slide > ion-list > ion-item > ion-label > h3 {
+    font-size: 12pt;
+    font-weight: 500;
+    color: var(--ion-color-secondary);
+}
+ion-slide > ion-list > ion-item > ion-label > p {
+    font-size: 10pt;
+    font-weight: 400;
+}
+ion-slide > ion-list > ion-item > ion-note > p {
+    font-size: 10pt;
+    font-weight: 500;
+}
+ion-slide > ion-list > ion-item > ion-note > h6 {
+    color: var(--ion-color-primary);
+}
+.neg-point {
+    color: var(--ion-color-danger);
+}

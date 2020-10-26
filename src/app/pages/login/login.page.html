@@ -1,0 +1,85 @@
+<ion-app>
+  <ion-header class="ion-no-border" color="primary" mode="ios">
+    <ion-toolbar class="ion-no-border" color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button text="" icon="arrow-back" defaultHref="portal"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content color="primary">
+    <form [formGroup]="dataLogin" (ngSubmit)="signIn()">
+      <ion-card>
+        <ion-card-header class="ion-padding-bottom">
+          <ion-card-subtitle class="ion-text-center" style="font-size: 14pt; font-weight: 600;">Ha, te
+            revoilà!
+          </ion-card-subtitle>
+
+          <ion-card-subtitle color="secondary" style="font-size: 9pt;">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          </ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-list>
+            <ion-item class="ion-no-padding ion-no-margin" style="margin-top: 14px; margin-bottom: 28px;">
+              <ion-input color="primary" type="email" required placeholder="E-mail" formControlName="email">
+              </ion-input>
+              <ion-icon *ngIf="dataLogin.controls.email.valid" color="success" slot="end" name="checkmark-circle">
+              </ion-icon>
+              <ion-icon *ngIf="dataLogin.controls.email.hasError()" (click)="dataLogin.controls.email.reset()"
+                color="danger" slot="end" name="close-circle"></ion-icon>
+            </ion-item>
+
+            <ion-item class="ion-no-padding ion-no-margin" style="margin-bottom: 14px;">
+              <ion-input color="primary" *ngIf="!showPassword" type="password" placeholder="Mot de passe"
+                formControlName="password"></ion-input>
+              <ion-icon (click)="showPassword = true" *ngIf="!showPassword" color="secondary" slot="end" name="eye">
+              </ion-icon>
+
+              <ion-input color="primary" *ngIf="showPassword" type="text" placeholder="Mot de passe"
+                formControlName="password"></ion-input>
+              <ion-icon (click)="showPassword = false" *ngIf="showPassword" slot="end" color="secondary" name="eye-off">
+              </ion-icon>
+            </ion-item>
+          </ion-list>
+
+          <p>Tu as oublié ton <a (click)="sendResetPasswordEmailToUserSystem()">mot de passe</a> ?</p>
+        </ion-card-content>
+
+        <p class="ion-margin ion-text-center" style="font-size: 10pt; font-weight: 500; letter-spacing: 0.5px;">Ou</p>
+
+        <ion-row class="ion-margin-top">
+          <ion-col size="3"></ion-col>
+          <ion-col size="3">
+            <ion-button (click)="loginGoogle()" color="secondary" expand="block" fill="outline" mode="ios">
+              <ion-icon slot="icon-only" name="logo-google"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="3">
+            <ion-button (click)="LoginFacebook()" color="secondary" expand="block" fill="outline" mode="ios">
+              <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="3"></ion-col>
+        </ion-row>
+      </ion-card>
+
+      <button [disabled]="!dataLogin.valid" type="submit"
+        style="position: absolute; left: -9999px; width: 1px; height: 1px;"></button>
+    </form>
+  </ion-content>
+
+  <ion-footer class="ion-no-border ion-no-margin ion-no-padding">
+    <ion-card class="ion-no-margin">
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="signIn()" color="primary" expand="block" fill="solid" mode="ios"
+            [disabled]="!dataLogin.valid">
+            Se connecter
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-footer>
+</ion-app>

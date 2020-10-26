@@ -1,0 +1,36 @@
+<ion-app>
+  <ion-content color="primary">
+  </ion-content>
+
+  <ion-footer class="ion-no-border">
+    <ion-card>
+      <ion-card-header class="ion-padding-bottom">
+        <ion-card-subtitle class="ion-text-center" style="font-size: 14pt; font-weight: 600;">Bienvenue
+          sur Ritual
+        </ion-card-subtitle>
+        <ion-card-subtitle color="secondary" class="ion-text-center" style="font-weight: 400; font-size: 9pt;">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        </ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-row>
+        <ion-col>
+          <ion-button [routerLink]="['/login']" routerLinkActive="router-link-active" expand="block" fill="clean"
+            mode="ios">
+            Se connecter
+          </ion-button>
+          <hr>
+          <ion-button [routerLink]="['/register']" routerLinkActive="router-link-active" expand="block" fill="clean"
+            mode="ios">
+            S'inscrire
+          </ion-button>
+          <!--hr>
+          <ion-button [routerLink]="['/home']" routerLinkActive="router-link-active" expand="block" fill="clean"
+            mode="ios">
+            Passer
+          </ion-button-->
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-footer>
+</ion-app>
